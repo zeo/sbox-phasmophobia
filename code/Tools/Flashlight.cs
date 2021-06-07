@@ -9,12 +9,14 @@ namespace Phasmophobia.Tools
 		public override string ViewModelPath => "weapons/rust_flashlight/v_rust_flashlight.vmdl";
 
 		protected virtual Vector3 LightOffset => Vector3.Forward * 10;
-		protected virtual int LightRange => 512;
+		protected virtual int LightRange => 256;
+		protected virtual int LightBrightness => 2;
 
 		private SpotLightEntity WorldLight { get; set; }
 		private SpotLightEntity ViewLight { get; set; }
 
-		[Net, Local, Predicted] private bool LightEnabled { get; set; } = true;
+		[Net, Local, Predicted]
+		private bool LightEnabled { get; set; } = true;
 
 		public override void Spawn()
 		{
@@ -49,7 +51,7 @@ namespace Phasmophobia.Tools
 				Falloff = 1.0f,
 				LinearAttenuation = 0,
 				QuadraticAttenuation = 1f,
-				Brightness = 2,
+				Brightness = LightBrightness,
 				Color = Color.White,
 				InnerConeAngle = 20,
 				OuterConeAngle = 40,

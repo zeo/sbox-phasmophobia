@@ -6,5 +6,6 @@ namespace Phasmophobia.Tools
 	public partial class StrongFlashlight : Flashlight
 	{
 		protected override int LightRange => 2056;
+		protected override int LightBrightness => 4;
 	}
 }
