@@ -4,7 +4,7 @@ using Sandbox;
 
 namespace Phasmophobia.Ghosts
 {
-	[Library( "phasmophobia_ghost_harry" )]
+	[Library( Title = "Harry" )]
 	public class Harry : BaseGhost
 	{
 		public override List<ICharacteristic> Characteristics { get; } = new() {new FreezingTemperatures(),};
