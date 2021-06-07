@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>phasmophobia</AssemblyName>
+        <PackageId>phasmophobia</PackageId>
+        <LangVersion>preview</LangVersion>
+        <NoWarn>1701;1702;1591;</NoWarn>
+        <RootNamespace>Phasmophobia</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="**\*.scss" DependentUpon="%(Filename).cs" />
+        <None Update="**\*.css" DependentUpon="%(Filename).cs" />
+        <None Update="**\*.sass" DependentUpon="%(Filename).cs" />
+        <None Update="**\*.html" DependentUpon="%(Filename).cs" />
+        <None Update="**\*.htm" DependentUpon="%(Filename).cs" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <OutputPath>../.intermediate/</OutputPath>
+        <DocumentationFile>../.intermediate/netstandard2.0/base.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Analyzer Include="../../../bin/managed/Sandbox.Generator.dll" />
+        <Reference Include="../../../bin/managed/Sandbox.System.dll" />
+        <Reference Include="../../../bin/managed/Sandbox.Engine.dll" />
+        <Reference Include="../../../bin/managed/Sandbox.Game.dll" />
+        <Reference Include="../../../bin/managed/Sandbox.Hotload.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../../base/code/base.csproj" />
+
+        <Content Include="..\.addon">
+            <Link>.addon</Link>
+        </Content>
+    </ItemGroup>
+
+</Project>
