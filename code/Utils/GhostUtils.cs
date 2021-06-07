@@ -32,10 +32,10 @@ namespace Phasmophobia.Utils
 		{
 			IEnumerable<Type> ghosts = Library.GetAll<BaseGhost>();
 
+			// TODO: make this work
 			foreach (var ghost in ghosts)
 			{
-				if ( typeof(BaseGhost) != ghost ) continue;
-				
+				// var d = Activator<>.CreateInstance(ghost);
 			}
 
 			return null;
